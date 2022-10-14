@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script>
+
+        //var salary1,rent1,other1,income2,a2,b2,c2,e2,edu2,tr2,gr2,ma2,ex2,buy2,itemp2;
+        function fun()
+        {
+           var salary1,rent1,other1,income2,a2,b2,c2,e2,edu2,tr2,gr2,ma2,ex2,buy2,itemp2,add1,a; 
+
+            salary1 = parseInt(document.getElementById("salary").value);
+            rent1 = parseInt(document.getElementById("s1").value);
+            other1 = parseInt(document.getElementById("other").value);
+
+            income2 = salary1+rent1+other1;
+
+            a2 = parseInt(document.getElementById("edu").value);
+            edu2 = (a2*income2)/100;
+
+            b2 = parseInt(document.getElementById("tr").value);
+            tr2 = (b2*income2)/100;
+
+            c2 = parseInt(document.getElementById("gr").value);
+            gr2 = (c2*income2)/100;
+
+            e2 = parseInt(document.getElementById("ma").value);
+            ma2 = (e2*income2)/100;
+
+            
+            itemp2 = parseInt(document.getElementById("itemp").value);
+            a="You are allowed to buy this product";
+
+            add1=edu2+tr2+gr2+ma2;
+            ex2 = (income2-add1);
+
+            b=document.getElementById("item").value;
+            if(ex2>itemp2)
+            {
+                //document.getElementById("mes").innerHTML = "You are allowed to buy this product";
+                document.getElementById("mes").value = a;
+                alert("Hello,You are allowed to buy  product");
+                //document.write(a);
+            }
+            else
+            {
+                document.getElementById("mes").value = "Out of Budget";
+                alert("Out of Budget");
+            }
+        }
+    </script>
+
+    <style>
+      .a{
+         /*background-color: aquamarine;
+         background: rgb(131,58,180);
+         background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+         background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,253,209,1) 100%);*/
+         background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+      }
+    </style>
+</head>
+<body>
+    <center>
+      <div class="m-5 p-5 rounded-4 a text-white w-75">
+
+        <h1>Monthly Budget System</h1>
+
+        <!-- <h5>Sources of Income</h5> -->
+
+        <div class="w-50">
+        <div class="input-group mb-3">
+           <span class="input-group-text" id="basic-addon3"><b>Enter Salary</b></span>
+           <input type="text" class="form-control" id="salary" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter Rent in Rs</b></span>
+            <input type="text" class="form-control" id="s1" aria-describedby="basic-addon3">
+         </div>
+
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter Other income</b></span>
+            <input type="text" class="form-control" id="other" aria-describedby="basic-addon3">
+         </div>
+
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter amount of percentage invest in Education</b></span>
+            <input type="text" class="form-control" id="edu" aria-describedby="basic-addon3">
+         </div>
+
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter amount of percentage invest in Travelling</b></span>
+            <input type="text" class="form-control" id="tr" aria-describedby="basic-addon3">
+         </div>
+
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter amount of percentage invest in Groccery</b></span>
+            <input type="text" class="form-control" id="gr" aria-describedby="basic-addon3">
+         </div>
+
+         <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon3"><b>Enter ammount of percentage invest in Maintaince</b></span>
+                        <input type="text" class="form-control" id="ma" aria-describedby="basic-addon3">
+         </div>
+
+         <br><br><br><br><br>
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter item want to shop</b></span>
+            <input type="text" class="form-control" id="item" aria-describedby="basic-addon3">
+         </div>
+
+
+         <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"><b>Enter item price</b></span>
+            <input type="text" class="form-control" id="itemp" aria-describedby="basic-addon3">
+         </div>
+
+         
+         <button type="button" class="btn btn-success" onclick="fun()">Budget Check</button><br> 
+         <!-- <input type="text" id="mes"> --><br>
+         <input type="text" class="form-control" id="mes" aria-describedby="basic-addon3">
+         <p id="mes"></p>
+      </div>
+
+         <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="fun()">
+    Launch static backdrop modal
+  </button> -->
+  
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="mes">
+          <p id="mes"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </center> -->
+
+   </div>
+</body>
+</html>
